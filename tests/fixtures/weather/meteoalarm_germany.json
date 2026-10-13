@@ -1,0 +1,535 @@
+{
+ "warnings": [
+  {
+   "alert": {
+    "code": [
+     "id:2.49.0.0.276.0.DWD.PVW.1791426840000.6bd0edb9-42ce-4752-8663-e43b02e97592",
+     "MCP:v2.0"
+    ],
+    "identifier": "2.49.0.0.276.0.DWD.PVW.1791426840000.6bd0edb9-42ce-4752-8663-e43b02e97592.MUL",
+    "incidents": "Update",
+    "info": [
+     {
+      "area": [
+       {
+        "altitude": 0.0,
+        "areaDesc": "Kreis Friesland - Binnenland",
+        "ceiling": 9842.5197,
+        "geocode": [
+         {
+          "value": "DE065",
+          "valueName": "EMMA_ID"
+         },
+         {
+          "value": "903455001",
+          "valueName": "WARNCELLID"
+         }
+        ]
+       },
+       {
+        "altitude": 0.0,
+        "areaDesc": "Kreis Stade",
+        "ceiling": 9842.5197,
+        "geocode": [
+         {
+          "value": "DE222",
+          "valueName": "EMMA_ID"
+         },
+         {
+          "value": "103359000",
+          "valueName": "WARNCELLID"
+         }
+        ]
+       }
+      ],
+      "category": [
+       "Met"
+      ],
+      "certainty": "Likely",
+      "contact": "Deutscher Wetterdienst",
+      "description": "Es treten Windböen mit Geschwindigkeiten um 55 km/h (15 m/s, 30 kn, Bft 7) aus nordwestlicher Richtung auf. In Schauernähe sowie in exponierten Lagen muss mit Sturmböen um 65 km/h (18 m/s, 35 kn, Bft 8) gerechnet werden.",
+      "event": "WINDBÖEN",
+      "expires": "2026-10-08T20:00:00+02:00",
+      "headline": "Amtliche WARNUNG vor WINDBÖEN",
+      "instruction": "Hinweis auf: umherfliegende leichte Gegenstände. \nHandlungsempfehlungen: \nlose Gegenstände sichern; z.B. Zelte und Abdeckungen befestigen",
+      "language": "de-DE",
+      "onset": "2026-10-08T08:00:00+02:00",
+      "responseType": [
+       "Prepare"
+      ],
+      "senderName": "Deutscher Wetterdienst",
+      "severity": "Minor",
+      "urgency": "Immediate",
+      "web": "https://dwd.de/warnungen"
+     },
+     {
+      "area": [
+       {
+        "altitude": 0.0,
+        "areaDesc": "Kreis Friesland - Binnenland",
+        "ceiling": 9842.5197,
+        "geocode": [
+         {
+          "value": "DE065",
+          "valueName": "EMMA_ID"
+         },
+         {
+          "value": "903455001",
+          "valueName": "WARNCELLID"
+         }
+        ]
+       },
+       {
+        "altitude": 0.0,
+        "areaDesc": "Kreis Stade",
+        "ceiling": 9842.5197,
+        "geocode": [
+         {
+          "value": "DE222",
+          "valueName": "EMMA_ID"
+         },
+         {
+          "value": "103359000",
+          "valueName": "WARNCELLID"
+         }
+        ]
+       }
+      ],
+      "category": [
+       "Met"
+      ],
+      "certainty": "Likely",
+      "contact": "Deutscher Wetterdienst",
+      "description": "There is a risk of wind gusts (level 1 of 4).\nMax. gusts: ~ 55 km/h; Wind direction: north-west; Increased gusts: near showers and in exposed locations ~ 65 km/h",
+      "event": "wind gusts",
+      "expires": "2026-10-08T20:00:00+02:00",
+      "headline": "Official WARNING of WIND GUSTS",
+      "instruction": "Hazard(s) to expect: light objects flying through the air. \nRecommendations for what to do: \nSecure loose objects. For example, fasten tents and coverings.",
+      "language": "en",
+      "onset": "2026-10-08T08:00:00+02:00",
+      "responseType": [
+       "Prepare"
+      ],
+      "senderName": "Deutscher Wetterdienst",
+      "severity": "Minor",
+      "urgency": "Immediate",
+      "web": "https://dwd.de/warnungen"
+     }
+    ],
+    "msgType": "Update",
+    "references": "opendata@dwd.de,2.49.0.0.276.0.DWD.PVW.1791391560000.d30f18f9-166f-44fc-997f-d323946548ff.MUL,2026-10-07T18:46:00+02:00",
+    "scope": "Public",
+    "sender": "opendata@dwd.de",
+    "sent": "2026-10-08T04:34:00+02:00",
+    "source": "PVW",
+    "status": "Actual"
+   },
+   "uuid": "d025ee8d-41d1-4375-b943-2a82b93c0177"
+  },
+  {
+   "alert": {
+    "code": [
+     "id:2.49.0.0.276.0.DWD.PVW.1791437940000.7f7c72e2-8a12-4e89-ad44-b4127b49d526",
+     "MCP:v2.0"
+    ],
+    "identifier": "2.49.0.0.276.0.DWD.PVW.1791437940000.7f7c72e2-8a12-4e89-ad44-b4127b49d526.MUL",
+    "incidents": "Alert",
+    "info": [
+     {
+      "area": [
+       {
+        "altitude": 0.0,
+        "areaDesc": "Kreis Rastatt",
+        "ceiling": 9842.5197,
+        "geocode": [
+         {
+          "value": "DE146",
+          "valueName": "EMMA_ID"
+         },
+         {
+          "value": "108216000",
+          "valueName": "WARNCELLID"
+         }
+        ]
+       },
+       {
+        "altitude": 0.0,
+        "areaDesc": "Schwarzwald-Baar-Kreis",
+        "ceiling": 9842.5197,
+        "geocode": [
+         {
+          "value": "DE408",
+          "valueName": "EMMA_ID"
+         },
+         {
+          "value": "108326000",
+          "valueName": "WARNCELLID"
+         }
+        ]
+       }
+      ],
+      "category": [
+       "Met"
+      ],
+      "certainty": "Likely",
+      "contact": "Deutscher Wetterdienst",
+      "description": "Es tritt Dauerregen auf. Dabei werden Niederschlagsmengen zwischen 25 l/m² und 40 l/m² erwartet.",
+      "event": "DAUERREGEN",
+      "expires": "2026-10-08T16:00:00+02:00",
+      "headline": "Amtliche WARNUNG vor DAUERREGEN",
+      "instruction": "Gefahr durch: vereinzelte Überflutungen von Straßen/Unterführungen. \nHandlungsempfehlungen: \nVerhalten im Straßenverkehr anpassen; überflutete Abschnitte meiden",
+      "language": "de-DE",
+      "onset": "2026-10-08T08:00:00+02:00",
+      "responseType": [
+       "Prepare"
+      ],
+      "senderName": "Deutscher Wetterdienst",
+      "severity": "Moderate",
+      "urgency": "Immediate",
+      "web": "https://dwd.de/warnungen"
+     },
+     {
+      "area": [
+       {
+        "altitude": 0.0,
+        "areaDesc": "Kreis Rastatt",
+        "ceiling": 9842.5197,
+        "geocode": [
+         {
+          "value": "DE146",
+          "valueName": "EMMA_ID"
+         },
+         {
+          "value": "108216000",
+          "valueName": "WARNCELLID"
+         }
+        ]
+       },
+       {
+        "altitude": 0.0,
+        "areaDesc": "Schwarzwald-Baar-Kreis",
+        "ceiling": 9842.5197,
+        "geocode": [
+         {
+          "value": "DE408",
+          "valueName": "EMMA_ID"
+         },
+         {
+          "value": "108326000",
+          "valueName": "WARNCELLID"
+         }
+        ]
+       }
+      ],
+      "category": [
+       "Met"
+      ],
+      "certainty": "Likely",
+      "contact": "Deutscher Wetterdienst",
+      "description": "There is a risk of persistent rain (level 2 of 4).\nPrecipitation amounts: 25-40 l/m²",
+      "event": "persistent rain",
+      "expires": "2026-10-08T16:00:00+02:00",
+      "headline": "Official WARNING of PERSISTANT RAIN",
+      "instruction": "Hazard(s) caused by: isolated flooding of roads and subways. \nRecommendations for what to do: \nAdapt your behaviour in road traffic. Avoid flooded areas.",
+      "language": "en",
+      "onset": "2026-10-08T08:00:00+02:00",
+      "responseType": [
+       "Prepare"
+      ],
+      "senderName": "Deutscher Wetterdienst",
+      "severity": "Moderate",
+      "urgency": "Immediate",
+      "web": "https://dwd.de/warnungen"
+     }
+    ],
+    "msgType": "Alert",
+    "scope": "Public",
+    "sender": "opendata@dwd.de",
+    "sent": "2026-10-08T07:39:00+02:00",
+    "source": "PVW",
+    "status": "Actual"
+   },
+   "uuid": "26561695-628d-40e4-8791-efe3b7bde865"
+  },
+  {
+   "alert": {
+    "code": [
+     "id:2.49.0.0.276.0.DWD.PVW.1791438360000.13c8b641-28b3-4661-bb0a-196a90bc5245",
+     "MCP:v2.0"
+    ],
+    "identifier": "2.49.0.0.276.0.DWD.PVW.1791438360000.13c8b641-28b3-4661-bb0a-196a90bc5245.MUL",
+    "incidents": "Alert",
+    "info": [
+     {
+      "area": [
+       {
+        "altitude": 0.0,
+        "areaDesc": "Kreis Vorpommern-Rügen - Binnenland",
+        "ceiling": 9842.5197,
+        "geocode": [
+         {
+          "value": "DE090",
+          "valueName": "EMMA_ID"
+         },
+         {
+          "value": "913073001",
+          "valueName": "WARNCELLID"
+         }
+        ]
+       },
+       {
+        "altitude": 0.0,
+        "areaDesc": "Kreis Vorpommern-Greifswald - Binnenland Nord",
+        "ceiling": 9842.5197,
+        "geocode": [
+         {
+          "value": "DE022",
+          "valueName": "EMMA_ID"
+         },
+         {
+          "value": "913075001",
+          "valueName": "WARNCELLID"
+         }
+        ]
+       }
+      ],
+      "category": [
+       "Met"
+      ],
+      "certainty": "Likely",
+      "contact": "Deutscher Wetterdienst",
+      "description": "Es treten Windböen mit Geschwindigkeiten um 55 km/h (15 m/s, 30 kn, Bft 7) anfangs aus nordwestlicher, später aus westlicher Richtung auf.",
+      "event": "WINDBÖEN",
+      "expires": "2026-10-08T20:00:00+02:00",
+      "headline": "Amtliche WARNUNG vor WINDBÖEN",
+      "instruction": "Hinweis auf: umherfliegende leichte Gegenstände. \nHandlungsempfehlungen: \nlose Gegenstände sichern; z.B. Zelte und Abdeckungen befestigen",
+      "language": "de-DE",
+      "onset": "2026-10-08T14:00:00+02:00",
+      "responseType": [
+       "Prepare"
+      ],
+      "senderName": "Deutscher Wetterdienst",
+      "severity": "Minor",
+      "urgency": "Immediate",
+      "web": "https://dwd.de/warnungen"
+     },
+     {
+      "area": [
+       {
+        "altitude": 0.0,
+        "areaDesc": "Kreis Vorpommern-Rügen - Binnenland",
+        "ceiling": 9842.5197,
+        "geocode": [
+         {
+          "value": "DE090",
+          "valueName": "EMMA_ID"
+         },
+         {
+          "value": "913073001",
+          "valueName": "WARNCELLID"
+         }
+        ]
+       },
+       {
+        "altitude": 0.0,
+        "areaDesc": "Kreis Vorpommern-Greifswald - Binnenland Nord",
+        "ceiling": 9842.5197,
+        "geocode": [
+         {
+          "value": "DE022",
+          "valueName": "EMMA_ID"
+         },
+         {
+          "value": "913075001",
+          "valueName": "WARNCELLID"
+         }
+        ]
+       }
+      ],
+      "category": [
+       "Met"
+      ],
+      "certainty": "Likely",
+      "contact": "Deutscher Wetterdienst",
+      "description": "There is a risk of wind gusts (level 1 of 4).\nMax. gusts: ~ 55 km/h; Wind direction: north-west then west",
+      "event": "wind gusts",
+      "expires": "2026-10-08T20:00:00+02:00",
+      "headline": "Official WARNING of WIND GUSTS",
+      "instruction": "Hazard(s) to expect: light objects flying through the air. \nRecommendations for what to do: \nSecure loose objects. For example, fasten tents and coverings.",
+      "language": "en",
+      "onset": "2026-10-08T14:00:00+02:00",
+      "responseType": [
+       "Prepare"
+      ],
+      "senderName": "Deutscher Wetterdienst",
+      "severity": "Minor",
+      "urgency": "Immediate",
+      "web": "https://dwd.de/warnungen"
+     }
+    ],
+    "msgType": "Alert",
+    "scope": "Public",
+    "sender": "opendata@dwd.de",
+    "sent": "2026-10-08T07:46:00+02:00",
+    "source": "PVW",
+    "status": "Actual"
+   },
+   "uuid": "12b0ae59-13bc-4221-93a1-64f467397ff0"
+  },
+  {
+   "alert": {
+    "code": [
+     "id:2.49.0.0.276.0.DWD.PVW.1791801240000.8b2d2586-0fde-488e-b168-76977617fe91",
+     "MCP:v2.0"
+    ],
+    "identifier": "2.49.0.0.276.0.DWD.PVW.1791801240000.8b2d2586-0fde-488e-b168-76977617fe91.MUL",
+    "incidents": "Alert",
+    "info": [
+     {
+      "area": [
+       {
+        "altitude": 0.0,
+        "areaDesc": "Kreis und Stadt München",
+        "ceiling": 9842.5197,
+        "geocode": [
+         {
+          "value": "DE056",
+          "valueName": "EMMA_ID"
+         },
+         {
+          "value": "909184999",
+          "valueName": "WARNCELLID"
+         }
+        ]
+       },
+       {
+        "altitude": 0.0,
+        "areaDesc": "Kreis Schwandorf",
+        "ceiling": 9842.5197,
+        "geocode": [
+         {
+          "value": "DE112",
+          "valueName": "EMMA_ID"
+         },
+         {
+          "value": "109376000",
+          "valueName": "WARNCELLID"
+         }
+        ]
+       },
+       {
+        "altitude": 0.0,
+        "areaDesc": "Kreis Traunstein",
+        "ceiling": 9842.5197,
+        "geocode": [
+         {
+          "value": "DE288",
+          "valueName": "EMMA_ID"
+         },
+         {
+          "value": "109189000",
+          "valueName": "WARNCELLID"
+         }
+        ]
+       }
+      ],
+      "category": [
+       "Met"
+      ],
+      "certainty": "Likely",
+      "contact": "Deutscher Wetterdienst",
+      "description": "Es tritt leichter Frost um -1 °C auf.",
+      "event": "FROST",
+      "expires": "2026-10-13T08:00:00+02:00",
+      "headline": "Amtliche WARNUNG vor FROST",
+      "instruction": "Hinweis auf: mögliche Frostschäden. \nHandlungsempfehlungen: \nggf. Frostschutzmaßnahmen ergreifen",
+      "language": "de-DE",
+      "onset": "2026-10-13T00:00:00+02:00",
+      "responseType": [
+       "Prepare"
+      ],
+      "senderName": "Deutscher Wetterdienst",
+      "severity": "Minor",
+      "urgency": "Immediate",
+      "web": "https://dwd.de/warnungen"
+     },
+     {
+      "area": [
+       {
+        "altitude": 0.0,
+        "areaDesc": "Kreis und Stadt München",
+        "ceiling": 9842.5197,
+        "geocode": [
+         {
+          "value": "DE056",
+          "valueName": "EMMA_ID"
+         },
+         {
+          "value": "909184999",
+          "valueName": "WARNCELLID"
+         }
+        ]
+       },
+       {
+        "altitude": 0.0,
+        "areaDesc": "Kreis Schwandorf",
+        "ceiling": 9842.5197,
+        "geocode": [
+         {
+          "value": "DE112",
+          "valueName": "EMMA_ID"
+         },
+         {
+          "value": "109376000",
+          "valueName": "WARNCELLID"
+         }
+        ]
+       },
+       {
+        "altitude": 0.0,
+        "areaDesc": "Kreis Traunstein",
+        "ceiling": 9842.5197,
+        "geocode": [
+         {
+          "value": "DE288",
+          "valueName": "EMMA_ID"
+         },
+         {
+          "value": "109189000",
+          "valueName": "WARNCELLID"
+         }
+        ]
+       }
+      ],
+      "category": [
+       "Met"
+      ],
+      "certainty": "Likely",
+      "contact": "Deutscher Wetterdienst",
+      "description": "There is a risk of frost (level 1 of 2).\nMinimum temperature: ~ -1 °C",
+      "event": "frost",
+      "expires": "2026-10-13T08:00:00+02:00",
+      "headline": "Official WARNING of FROST",
+      "instruction": "Hazard(s) to expect: possible frost damage. \nRecommendations for what to do: \nIf necessary, take precautions against frost.",
+      "language": "en",
+      "onset": "2026-10-13T00:00:00+02:00",
+      "responseType": [
+       "Prepare"
+      ],
+      "senderName": "Deutscher Wetterdienst",
+      "severity": "Minor",
+      "urgency": "Immediate",
+      "web": "https://dwd.de/warnungen"
+     }
+    ],
+    "msgType": "Alert",
+    "scope": "Public",
+    "sender": "opendata@dwd.de",
+    "sent": "2026-10-12T12:34:00+02:00",
+    "source": "PVW",
+    "status": "Actual"
+   },
+   "uuid": "26dbde17-5dff-4838-ac14-6f1cc6cd0d7e"
+  }
+ ]
+}

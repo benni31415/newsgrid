@@ -1,0 +1,7 @@
+{
+  "mcpServers": {
+    "newsgrid-weather": {
+      "command": ".venv\\Scripts\\newsgrid-weather.exe"
+    }
+  }
+}

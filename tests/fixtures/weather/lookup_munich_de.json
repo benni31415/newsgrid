@@ -1,0 +1,24 @@
+{
+ "id": 2867714,
+ "name": "München",
+ "latitude": 48.13743,
+ "longitude": 11.57549,
+ "elevation": 524.0,
+ "feature_code": "PPLA",
+ "country_code": "DE",
+ "admin1_id": 2951839,
+ "admin2_id": 2861322,
+ "admin3_id": 3220837,
+ "admin4_id": 6559171,
+ "timezone": "Europe/Berlin",
+ "population": 1260391,
+ "postcodes": [
+  "80331"
+ ],
+ "country_id": 2921044,
+ "country": "Deutschland",
+ "admin1": "Bayern",
+ "admin2": "Regierungsbezirk Oberbayern",
+ "admin3": "Kreisfreie Stadt München",
+ "admin4": "München"
+}

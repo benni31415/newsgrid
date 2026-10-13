@@ -1,0 +1,48 @@
+[project]
+name = "newsgrid"
+version = "0.1.0"
+description = "Location-centric news and weather briefings built on the Model Context Protocol"
+readme = "ARCHITECTURE.md"
+requires-python = ">=3.12"
+dependencies = [
+    "mcp>=2.3,<2.4",
+    "httpx>=0.28",
+    "certifi",
+    "pydantic>=2.12",
+    "pydantic-settings>=2.10",
+    "stamina>=25.1",
+    "tzdata",  # IANA zones for zoneinfo on Windows
+]
+
+[project.scripts]
+newsgrid-weather = "newsgrid.servers.weather.server:main"
+
+[dependency-groups]
+dev = [
+    "pytest>=8.4",
+    "anyio>=4.10",
+    "respx>=0.22",
+    "ruff>=0.12",
+    "pyright>=1.1.400",
+]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/newsgrid"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-ra"
+
+[tool.ruff]
+line-length = 100
+src = ["src", "tests"]
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B", "ASYNC", "RUF"]
+
+[tool.pyright]
+include = ["src", "tests"]

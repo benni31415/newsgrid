@@ -49,20 +49,64 @@ flowchart LR
 Three focused servers plus one host. The host is the only part that talks to more than one
 server, which is how real MCP hosts work. The servers never call each other.
 
+### Diagram node IDs
+
+The short names in the diagram source are Mermaid node IDs. The rendered diagram shows
+the labels instead, but the IDs appear when reading the raw Markdown.
+
+| ID | Meaning |
+|---|---|
+| `CLI` | Command-line interface (`brief` / `chat` / `serve`) |
+| `ORCH` | Orchestrator, which routes calls to the servers |
+| `CB` | Callbacks: the host's handlers for server-initiated requests (sampling, elicitation, roots, logging, progress) |
+| `LLM` | Large language model, i.e. the Claude API |
+| `W` | Weather server |
+| `WP` | Weather providers (Open-Meteo, NWS, MeteoAlarm) |
+| `N` | News server |
+| `NP` | News providers (RSS/Atom, Hacker News, GDELT) |
+| `NDB` | News database (`profiles.sqlite`, saved briefing profiles) |
+| `B` | Briefing server |
+| `TPL` | Templates (Jinja2) used to render the HTML report |
+| `BDB` | Briefing database (`reports.sqlite`, rendered reports) |
+
+In the sequence diagram in section 4, `H`, `W`, `N`, `B` and `C` stand for the host, the
+weather, news and briefing servers, and Claude.
+
 ## 3. Components and MCP features
 
 ### 3.1 weather server (`newsgrid.servers.weather`)
 
 | Primitive | Item | Notes |
 |---|---|---|
-| Tool | `geocode(query) -> list[Location]` | Open-Meteo geocoding |
-| Tool | `get_forecast(location, days=3) -> Forecast` | structured output (`outputSchema`) |
-| Tool | `get_alerts(location) -> list[Alert]` | NWS (US) / MeteoAlarm (EU) |
+| Tool | `geocode(location) -> list[Location]` | Open-Meteo geocoding |
+| Tool | `get_forecast(location, days=3) -> Forecast` | structured output (`outputSchema`); `days` 1–16 |
+| Tool | `get_alerts(location) -> list[Alert]` | NWS (US) / MeteoAlarm (EU), most severe first |
 | Resource template | `weather://{location}/current` | JSON |
-| Resource template | `weather://{location}/forecast` | JSON |
-| Completion | `location` argument | suggests city names as the user types |
+| Resource template | `weather://{location}/forecast` | JSON, 7 days |
+| Completion | `location` argument | suggests place labels as the user types |
 | Elicitation | ambiguous geocode | "Springfield" → asks the user which one |
 | Annotations | all tools | `readOnlyHint=true`, `openWorldHint=true` |
+
+**Location strings.** Every tool and resource takes the same `location` string: a place
+name, optionally narrowed by region and/or country (`"Springfield, IL"`,
+`"Springfield, Illinois, United States"`), or `"lat,lon"`. US state abbreviations are
+understood. When some geocoder results have exactly the requested name, fuzzy matches are
+dropped.
+
+**Ambiguity and elicitation.** A query is ambiguous when several places match and the top
+one is less than 10× as populous as the next ("Paris" → Paris, France without asking;
+"Springfield" → ask). Tools resolve the location with SDK resolvers
+(`Annotated[..., Resolve(fn)]`) that return `Elicit(...)` with an enum of up to six places.
+The SDK sends this as an `InputRequiredResult` on protocol 2026-07-28 and as a mid-call
+`elicitation/create` request on older versions. If the client cannot elicit, or the user
+declines, `geocode` returns all candidates and the other tools use the best match.
+Resources cannot ask, so they always use the best match.
+
+**Alert matching.** NWS matches the point server-side. MeteoAlarm feeds have no geometry,
+only area names in the national language ("Kreis und Stadt München"). The server therefore
+looks the place up again in that language and matches whole words against each warning's
+`areaDesc`, dropping expired warnings. Coordinates-only locations and countries outside
+both sources return a tool error rather than an empty list.
 
 ### 3.2 news server (`newsgrid.servers.news`)
 
@@ -147,9 +191,9 @@ sequenceDiagram
 
 Pydantic v2 models, shared by all servers and used for tool `outputSchema`s:
 
-- `Location(name, country, admin1, lat, lon, timezone)`
-- `Forecast(location, current, daily: list[DailyForecast])`
-- `Alert(id, severity, event, headline, onset, expires, area)`
+- `Location(id, name, country, country_code, admin1, admin2, lat, lon, timezone, population)`
+- `Forecast(location, current: CurrentConditions, daily: list[DailyForecast])`
+- `Alert(id, source, severity, event, headline, description, instruction, onset, expires, area)`
 - `Article(id, title, url, source_id, published_at, snippet, topics)`
 - `Cluster(title, summary, article_ids, priority)`
 - `BriefingInput(location, forecast, alerts, clusters, generated_at)`
@@ -172,7 +216,8 @@ newsgrid/
 │   │   └── settings.py         # pydantic-settings
 │   ├── servers/
 │   │   ├── weather/
-│   │   │   ├── server.py       # FastMCP app: tools/resources/completions
+│   │   │   ├── server.py       # MCPServer app: tools/resources/completions
+│   │   │   ├── service.py      # location parsing, ambiguity, alert routing
 │   │   │   └── providers/      # open_meteo.py, nws.py, meteoalarm.py
 │   │   ├── news/
 │   │   │   ├── server.py
@@ -204,7 +249,7 @@ Entry points: `newsgrid` (host CLI), `newsgrid-weather`, `newsgrid-news` and
 
 | Concern | Choice | Why |
 |---|---|---|
-| MCP | official `mcp` Python SDK (FastMCP server API + `ClientSession`) | reference implementation, follows the spec closely |
+| MCP | official `mcp` Python SDK v2 (`MCPServer`, formerly FastMCP, + `Client`) | reference implementation, follows the spec closely |
 | HTTP | `httpx` (async) + `stamina` for retries | |
 | Models / config | `pydantic` v2, `pydantic-settings` | also generates tool schemas |
 | Storage | `aiosqlite` | profiles and reports; no server to run |
